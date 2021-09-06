@@ -20,7 +20,7 @@ def emove(board, sign, pos):
         #If sign is X then O must have won on the previous round
         if sign == "X":
             #print ("working")
-            return [pos, 100] #position, value
+            return [pos, 10] #position, value
         else:
             return [pos, 0]
     else:
@@ -40,6 +40,7 @@ def emove(board, sign, pos):
             else:
                 branch = emove (change, "X", i)
             choices.append(branch)
+    nvalue = 0
     if sign == "X":
         #Max
         current = choices[0]
