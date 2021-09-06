@@ -1,4 +1,3 @@
-import time
 def check(board):
     Wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
     for i in Wins:
@@ -38,33 +37,21 @@ def emove(board, sign, pos):
             change[i] = sign
             if sign == "X":
                 branch = emove (change, "O", i)
-##                print(branch)
-##                print (choices)
             else:
                 branch = emove (change, "X", i)
-                #print("M")
             choices.append(branch)
-    #print (choices)
-    #O is high, X is low
-    #Max O, Min X
-    #return (pos, value)
-    #if pos != -1 chosen[0] = pos return chosen
-    #else return chosen
-    nvalue = 0 #Total Value for current Board
     if sign == "X":
         #Max
         current = choices[0]
         for k in choices:
             nvalue +=k[1]
             if k[1] < current[1]:
-                #print ("happened: ", current, " - ", k)
                 current = k
     else:
         current =choices[0]
         for k in choices:
             nvalue +=k[1]
             if k[1] > current[1]:
-                #print ("happened: ", current, " - ", k)
                 current = k #Min
     if pos != -1:
         current[0] = pos
