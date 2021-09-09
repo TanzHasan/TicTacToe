@@ -1,6 +1,6 @@
 # TicTacToe
 A game of tic-tac-toe against an AI using the minimax algorithm.
-This game does not use any data structures to highlight the capablity of the minimax algorithm.
+This game does not use any data structures in order to highlight the capablity of the minimax algorithm.
 A large increase in efficiency will be obtained through the simple implementation of the following:
 
 ```python
